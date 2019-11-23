@@ -48,6 +48,15 @@ class Player extends React.PureComponent {
   render() {
     return (
       <div>
+        <textarea
+          className="Player-area"
+          autoComplete="off"
+          cols="40"
+          rows="20"
+          readOnly
+          value={this.state.currentFrame}
+        />
+
         <div className="Player-buttons">
           <button
             onClick={this.play}>
@@ -61,19 +70,12 @@ class Player extends React.PureComponent {
 
           <input
             type="number"
+            min="10"
+            max="2000"
             onChange={this.handleIntervalChange}
             value={this.state.interval}
           />
         </div>
-
-        <textarea
-          className="Player-area"
-          autoComplete="off"
-          cols="40"
-          rows="20"
-          readOnly
-          value={this.state.currentFrame}
-        />
       </div>
     );
   }

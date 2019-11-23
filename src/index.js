@@ -1,7 +1,7 @@
 import React from 'react';
 import { setGlobal, addReducer } from 'reactn';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import App from './components/App/App';
 import * as serviceWorker from './serviceWorker';
 
@@ -33,13 +33,15 @@ addReducer("addFrame", (global, dispatch) => {
 });
 
 addReducer("removeFrame", (global, dispatch) => {
-    global.frames.splice(global.frameIndex, 1);
+    if (global.frameCount-1 > 0) {
+        global.frames.splice(global.frameIndex, 1);
 
-    return {
-        frames: global.frames,
-        frameCount: global.frameCount-1,
-        frameIndex: global.frameIndex-1
-    };
+        return {
+            frames: global.frames,
+            frameCount: global.frameCount-1,
+            frameIndex: global.frameIndex-1
+        };
+    }
 });
 
 ReactDOM.render(<App />, document.getElementById('root'));

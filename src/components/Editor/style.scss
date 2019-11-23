@@ -1,22 +1,39 @@
 .Editor-buttons {
     display: flex;
     flex-direction: row;
+    justify-content: left;
     margin-bottom: 2vh;
 
     button {
         margin-left: 2px;
+        width: calc(40px + 5vh);
+        height: 4vh;
+        outline: none;
+        font-size: 2vh;
+        border: 0;
+        border-radius: 4px;
+        background: #6bfab3;
+        color: #e9ffe3;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #b3f5d4;
     }
 
     input {
         margin-left: 2px;
+        width: calc(40px + 5vh);
         outline: none;
+        border: 2px solid black;
+        border-radius: 4px;
     }
 }
 
 .Editor-area {
     resize: none;
     outline: none;
-    border: solid black 2px;
+    border: solid #93ff17 4px;
     border-radius: 4px;
     margin-right: 2vw;
 }

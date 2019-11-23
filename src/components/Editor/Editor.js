@@ -37,7 +37,16 @@ class Editor extends React.PureComponent {
 
   render() {
     return (
-      <div>
+      <div className="Editor-div">
+        <textarea
+          className="Editor-area"
+          autoComplete="off"
+          cols="40"
+          rows="20"
+          value={this.global.frames[this.global.frameIndex]}
+          onChange={this.handleFrameChange}
+        />
+
         <div className="Editor-buttons">
           <button
             onClick={this.dispatch.addFrame}>
@@ -62,15 +71,6 @@ class Editor extends React.PureComponent {
             save
           </button>
         </div>
-
-        <textarea
-          className="Editor-area"
-          autoComplete="off"
-          cols="40"
-          rows="20"
-          value={this.global.frames[this.global.frameIndex]}
-          onChange={this.handleFrameChange}
-        />
       </div>
     );
   }

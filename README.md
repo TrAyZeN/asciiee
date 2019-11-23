@@ -2,7 +2,7 @@
     asciiee
 </h1>
 
-> A website that allows you to make ascii art animations
+> A simple online ascii art animation editor and player
 <!-- <div align="center">
     <img src="assets/image.png"/>
 </div> -->
