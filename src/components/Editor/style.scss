@@ -1,0 +1,12 @@
+.Editor-buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.Editor-area {
+    resize: none;
+    outline: none;
+    border: solid black 2px;
+    border-radius: 4px;
+    margin-right: 2vw;
+}
