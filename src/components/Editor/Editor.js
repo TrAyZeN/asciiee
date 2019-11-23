@@ -1,48 +1,22 @@
-import React from 'react';
+import React from 'reactn';
 import './style.scss';
 
-class Editor extends React.Component {
+class Editor extends React.PureComponent {
   constructor() {
     super();
 
-    this.state = {
-      frames: [""],
-      frameCount: 1,
-      frameIndex: 0
-    };
-
-    this.addFrame = this.addFrame.bind(this);
-    this.removeFrame = this.removeFrame.bind(this);
     this.saveFrames = this.saveFrames.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    this.handleFrameChange = this.handleFrameChange.bind(this);
+    this.handleFrameIndexChange = this.handleFrameIndexChange.bind(this);
   }
 
-  addFrame() {
-    this.setState((state) => {
-      state.frames.splice(state.frameIndex+1, 0, "");
+  handleFrameIndexChange(event) {
+    event.persist();
 
-      return {
-        frames: state.frames,
-        frameCount: state.frameCount+1,
-        frameIndex: state.frameIndex+1
-      }
-    });
-  }
-
-  removeFrame() {
-    this.setState((state) => {
-      state.frames.splice(state.frameIndex, 1);
-
-      return {
-        frames: state.frames,
-        frameCount: state.frameCount-1,
-        frameIndex: state.frameIndex-1
-      }
-    });
+    this.dispatch.changeFrameIndex(parseInt(event.target.value)-1);
   }
 
   saveFrames() {
-    console.log("Save");
     let element = document.createElement("a");
     element.download = "frames.txt";
     element.href = `data:text/plain;charset=utf-8,${encodeURIComponent(this.formatFrames())}`;
@@ -52,17 +26,13 @@ class Editor extends React.Component {
 
   // format frames to save them in a file
   formatFrames() {
-    return this.state.frames.join("\n=================================\n");
+    return this.global.frames.join("\n=========================================\n");
   }
 
-  handleChange(event) {
+  handleFrameChange(event) {
     event.persist();
 
-    this.setState((state) => {
-      state.frames[state.frameIndex] = event.target.value;
-
-      return { frames: state.frames }
-    });
+    this.dispatch.updateFrame(event.target.value);
   }
 
   render() {
@@ -70,16 +40,23 @@ class Editor extends React.Component {
       <div>
         <div className="Editor-buttons">
           <button
-            onClick={this.addFrame}>
+            onClick={this.dispatch.addFrame}>
             add
           </button>
+
           <button
-            onClick={this.removeFrame}>
+            onClick={this.dispatch.removeFrame}>
             remove
           </button>
-          <button>
-            frame
-          </button>
+
+          <input
+            type="number"
+            value={this.global.frameIndex+1}
+            min="1"
+            max={this.global.frameCount}
+            onChange={this.handleFrameIndexChange}
+          />
+
           <button
             onClick={this.saveFrames}>
             save
@@ -91,8 +68,8 @@ class Editor extends React.Component {
           autoComplete="off"
           cols="40"
           rows="20"
-          value={this.state.frames[this.state.frameIndex]}
-          onChange={this.handleChange}
+          value={this.global.frames[this.global.frameIndex]}
+          onChange={this.handleFrameChange}
         />
       </div>
     );

@@ -1,22 +1,22 @@
-.Editor-buttons {
+.Player-buttons {
     display: flex;
     flex-direction: row;
     margin-bottom: 2vh;
 
     button {
-        margin-left: 2px;
+        margin-left: 4px;
     }
 
     input {
-        margin-left: 2px;
+        margin-left: 4px;
         outline: none;
     }
 }
 
-.Editor-area {
+.Player-area {
     resize: none;
     outline: none;
     border: solid black 2px;
     border-radius: 4px;
-    margin-right: 2vw;
+    margin-left: 2vw;
 }

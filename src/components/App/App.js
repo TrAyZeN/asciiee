@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.scss';
-import Viewer from '../Viewer/Viewer';
 import Editor from '../Editor/Editor';
+import Player from '../Player/Player';
 
 class App extends React.Component {
   render() {
@@ -13,7 +13,7 @@ class App extends React.Component {
           </h1>
           <div className="App-pannel">
             <Editor />
-            <Viewer />
+            <Player />
           </div>
         </header>
       </div>
