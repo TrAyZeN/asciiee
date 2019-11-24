@@ -3,10 +3,11 @@
 }
 
 .App-header {
-  background-color: #46a3f0;
+  padding-top: 4vh;
   min-height: 100vh;
   font-size: calc(10px + 2vmin);
   color: black;
+  background: radial-gradient(#983628, #A83A50, #A83A50);
 }
 
 .App-pannel {
@@ -17,6 +18,8 @@
 }
 
 .App-title {
-  font-size: calc(15px + 7vmin);
+  font-size: calc(40px + 6vmin);
   color: #ffee57;
+  margin: 0;
+  margin-bottom: 3vh;
 }

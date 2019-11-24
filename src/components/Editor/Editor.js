@@ -47,7 +47,7 @@ class Editor extends React.PureComponent {
           onChange={this.handleFrameChange}
         />
 
-        <div className="Editor-buttons">
+        <div className="Editor-options">
           <button
             onClick={this.dispatch.addFrame}>
             add
