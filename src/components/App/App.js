@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.scss';
-import Editor from '../Editor/Editor';
-import Player from '../Player/Player';
+import Editor from '../Editor';
+import Player from '../Player';
 
 class App extends React.Component {
   render() {
