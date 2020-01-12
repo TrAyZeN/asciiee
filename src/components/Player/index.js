@@ -68,6 +68,7 @@ class Player extends React.PureComponent {
             loop
           </button>
 
+          <p>Interval: </p>
           <input
             type="number"
             min="10"
