@@ -7,7 +7,7 @@
   min-height: 100vh;
   font-size: calc(10px + 2vmin);
   color: black;
-  background: radial-gradient(#983628, #A83A50, #A83A50);
+  background: radial-gradient(#983628, #a83a50, #a83a50);
 }
 
 .App-pannel {
@@ -15,6 +15,10 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+  }
 }
 
 .App-title {
