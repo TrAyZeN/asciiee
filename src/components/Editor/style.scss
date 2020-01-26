@@ -28,7 +28,16 @@
         outline: none;
         border: 0;
         border-radius: 6px;
+        -webkit-outer-spin-button,
+        -webkit-outer-spin-button {
+            background-color: red;
+        }
     }
+
+    // input::,
+    // input:: {
+    //     border-left: 1px solid #888;
+    // }
 }
 
 .Editor-area {
