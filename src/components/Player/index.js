@@ -47,7 +47,7 @@ class Player extends React.PureComponent {
 
   render() {
     return (
-      <div>
+      <div className="Player">
         <textarea
           className="Player-area"
           autoComplete="off"
@@ -58,17 +58,19 @@ class Player extends React.PureComponent {
         />
 
         <div className="Player-buttons">
-          <button
-            onClick={this.play}>
-            play
-          </button>
+          <div className="Player-play-loop">
+            <button
+              onClick={this.play}>
+              play
+            </button>
 
-          <button
-            onClick={this.loop}>
-            loop
-          </button>
+            <button
+              onClick={this.loop}>
+              loop
+            </button>
+          </div>
 
-          <p>Interval: </p>
+          <p>Interval (in ms): </p>
           <input
             type="number"
             min="10"

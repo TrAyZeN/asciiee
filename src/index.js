@@ -1,5 +1,4 @@
-import React from 'react';
-import { setGlobal, addReducer } from 'reactn';
+import React, { setGlobal, addReducer } from 'reactn';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './components/App/App';
@@ -23,7 +22,7 @@ addReducer("updateFrame", (global, dispatch, newFrame) => {
 });
 
 addReducer("addFrame", (global, dispatch) => {
-    global.frames.splice(global.frameIndex+1, 0, "");
+    global.frames.splice(global.frameIndex + 1, 0, "");
 
     return {
         frames: global.frames,
@@ -38,8 +37,8 @@ addReducer("removeFrame", (global, dispatch) => {
 
         return {
             frames: global.frames,
-            frameCount: global.frameCount-1,
-            frameIndex: global.frameIndex-1
+            frameCount: global.frameCount - 1,
+            frameIndex: global.frameIndex - 1
         };
     }
 });

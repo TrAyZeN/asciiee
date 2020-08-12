@@ -37,7 +37,7 @@ class Editor extends React.PureComponent {
 
   render() {
     return (
-      <div className="Editor-div">
+      <div className="Editor">
         <textarea
           className="Editor-area"
           autoComplete="off"
@@ -48,23 +48,28 @@ class Editor extends React.PureComponent {
         />
 
         <div className="Editor-options">
-          <button
-            onClick={this.dispatch.addFrame}>
-            add
-          </button>
+          <div className="Editor-add-remove">
+            <button
+              onClick={this.dispatch.addFrame}>
+              add
+            </button>
 
-          <button
-            onClick={this.dispatch.removeFrame}>
-            remove
-          </button>
+            <button
+              onClick={this.dispatch.removeFrame}>
+              remove
+            </button>
+          </div>
 
-          <input
-            type="number"
-            value={this.global.frameIndex+1}
-            min="1"
-            max={this.global.frameCount}
-            onChange={this.handleFrameIndexChange}
-          />
+          <div className="Editor-frame">
+            <p>Frame:</p>
+            <input
+              type="number"
+              value={this.global.frameIndex+1}
+              min="1"
+              max={this.global.frameCount}
+              onChange={this.handleFrameIndexChange}
+            />
+          </div>
 
           <button
             onClick={this.saveFrames}>

@@ -1,29 +1,26 @@
 .App {
   text-align: center;
-}
 
-.App-header {
-  padding-top: 4vh;
-  min-height: 100vh;
-  font-size: calc(10px + 2vmin);
-  color: black;
-  background: radial-gradient(#983628, #a83a50, #a83a50);
-}
-
-.App-pannel {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-
-  @media screen and (max-width: 900px) {
-    flex-direction: column;
+  .App-header {
+    padding-top: 4vh;
+    min-height: 100vh;
+    font-size: calc(10px + 2vmin);
   }
-}
 
-.App-title {
-  font-size: calc(40px + 6vmin);
-  color: #ffee57;
-  margin: 0;
-  margin-bottom: 3vh;
+  .App-pannel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    @media screen and (max-width: 900px) {
+      flex-direction: column;
+    }
+  }
+
+  .App-title {
+    font-size: calc(40px + 6vmin);
+    color: #ffee57;
+    margin: 0;
+    margin-bottom: 3vh;
+  }
 }
