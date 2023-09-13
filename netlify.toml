@@ -1,7 +1,7 @@
 [build]
   base = "."
   publish =  "./build/"
-  command = "yarn build"
+  command = "pnpm run build"
   [build.processing]
     skip_processing = false
   [build.processing.css]

@@ -9,18 +9,18 @@
 
 ## Requirements
 - [Node.js](https://nodejs.org/)
-- [yarn](https://yarnpkg.com/)
+- [pnpm](https://pnpm.io/)
 
 ## Install
-```
+```sh
 git clone https://github.com/TrAyZeN/asciiee.git
 cd asciiee
-yarn install
+pnpm install
 ```
 
 ## Usage
-```
-yarn start
+```sh
+pnpm run start
 ```
 
 ## License
